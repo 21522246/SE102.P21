@@ -10,6 +10,8 @@
 #include "Coin.h"
 #include "Platform.h"
 #include "Tree.h"
+#include "Cloud.h"
+#include "ColorBlock.h"
 
 #include "SampleKeyEventHandler.h"
 
@@ -153,6 +155,20 @@ void CPlayScene::_ParseSection_OBJECTS(string line)
 	{
 		int aniId = (int)atoi(tokens[3].c_str());
 		obj = new CTree(x, y, aniId);
+		break;
+	}
+
+	case OBJECT_TYPE_CLOUD:
+	{
+		int aniId = (int)atoi(tokens[3].c_str());
+		obj = new CCloud(x, y, aniId);
+		break;
+	}
+
+	case OBJECT_TYPE_COLORBLOCK:
+	{
+		int aniId = (int)atoi(tokens[3].c_str());
+		obj = new CColorBlock(x, y, aniId);
 		break;
 	}
 
