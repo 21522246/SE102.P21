@@ -30,6 +30,23 @@ void CSampleKeyHandler::OnKeyDown(int KeyCode)
 		break;
 	case DIK_R: // reset
 		//Reload();
+		// Get the current scene and reload it by initiating a switch to itself
+		CGame* game = CGame::GetInstance();
+		
+		// Since we can't directly access the ID, we'll use this technique:
+		// First store the current scene
+		LPSCENE currentScene = game->GetCurrentScene();
+		
+		// Then we'll get the current scene ID through the PlayScene
+		if (LPPLAYSCENE playScene = dynamic_cast<LPPLAYSCENE>(currentScene))
+		{
+			// Unload the current scene
+			playScene->Unload();
+			// And load it again
+			playScene->Load();
+			
+			DebugOut(L"[INFO] Scene has been reloaded\n");
+		}
 		break;
 	}
 }

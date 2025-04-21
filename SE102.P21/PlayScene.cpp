@@ -9,6 +9,7 @@
 #include "Portal.h"
 #include "Coin.h"
 #include "Platform.h"
+#include "Tree.h"
 
 #include "SampleKeyEventHandler.h"
 
@@ -148,6 +149,12 @@ void CPlayScene::_ParseSection_OBJECTS(string line)
 	}
 	break;
 
+	case OBJECT_TYPE_TREE:
+	{
+		int aniId = (int)atoi(tokens[3].c_str());
+		obj = new CTree(x, y, aniId);
+		break;
+	}
 
 	default:
 		DebugOut(L"[ERROR] Invalid object type: %d\n", object_type);
