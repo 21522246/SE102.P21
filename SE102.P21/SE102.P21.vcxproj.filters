@@ -190,5 +190,6 @@
     <Text Include="tree.txt">
       <Filter>Resource Files</Filter>
     </Text>
+    <Text Include="stage1.txt" />
   </ItemGroup>
 </Project>
