@@ -87,6 +87,9 @@
     <ClCompile Include="ColorBlock.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Pipe.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Animation.h">
@@ -167,6 +170,9 @@
     <ClInclude Include="ColorBlock.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Pipe.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Text Include="brick.txt">
@@ -204,5 +210,6 @@
     </Text>
     <Text Include="stage1.txt" />
     <Text Include="colorblock.txt" />
+    <Text Include="pipe.txt" />
   </ItemGroup>
 </Project>
