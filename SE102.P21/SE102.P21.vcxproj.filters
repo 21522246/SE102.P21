@@ -96,6 +96,9 @@
     <ClCompile Include="mysteryblock.txt">
       <Filter>Resource Files</Filter>
     </ClCompile>
+    <ClCompile Include="Mushroom.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Animation.h">
@@ -182,6 +185,9 @@
     <ClInclude Include="MysteryBlock.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Mushroom.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Text Include="brick.txt">
@@ -220,5 +226,6 @@
     <Text Include="stage1.txt" />
     <Text Include="colorblock.txt" />
     <Text Include="pipe.txt" />
+    <Text Include="mushroom.txt" />
   </ItemGroup>
 </Project>
