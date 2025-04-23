@@ -14,6 +14,7 @@
 #include "ColorBlock.h"
 #include "Pipe.h"
 #include "MysteryBlock.h"
+#include "DarkZone.h"
 
 #include "SampleKeyEventHandler.h"
 
@@ -189,6 +190,26 @@ void CPlayScene::_ParseSection_OBJECTS(string line)
 		break;
 	}
 
+	case OBJECT_TYPE_DARKZONE:
+	{
+
+		float cell_width = (float)atof(tokens[3].c_str());
+		float cell_height = (float)atof(tokens[4].c_str());
+		int length = atoi(tokens[5].c_str());
+		int height = atoi(tokens[6].c_str());
+		int sprite_begin = atoi(tokens[7].c_str());
+		int sprite_middle = atoi(tokens[8].c_str());
+		int sprite_end = atoi(tokens[9].c_str());
+
+		obj = new CDarkZone(
+			x, y,
+			cell_width, cell_height, length, height,
+			sprite_begin, sprite_middle, sprite_end
+		);
+
+		break;
+	}
+
 	default:
 		DebugOut(L"[ERROR] Invalid object type: %d\n", object_type);
 		return;
@@ -322,6 +343,16 @@ void CPlayScene::Render()
 {
 	for (int i = 0; i < objects.size(); i++) {
 		if (objects[i] != player) {
+			objects[i]->Render();
+		}
+	}
+	for (int i = 0; i < objects.size(); i++) {
+		if (objects[i]->RenderPriority() == 1) {
+			objects[i]->Render();
+		}
+	}
+	for (int i = 0; i < objects.size(); i++) {
+		if (objects[i]->RenderPriority() == 2) {
 			objects[i]->Render();
 		}
 	}

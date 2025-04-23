@@ -139,6 +139,7 @@
     <ClCompile Include="Coin.cpp" />
     <ClCompile Include="Collision.cpp" />
     <ClCompile Include="ColorBlock.cpp" />
+    <ClCompile Include="DarkZone.cpp" />
     <ClCompile Include="debug.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="GameObject.cpp" />
@@ -170,6 +171,7 @@
     <ClInclude Include="Coin.h" />
     <ClInclude Include="Collision.h" />
     <ClInclude Include="ColorBlock.h" />
+    <ClInclude Include="DarkZone.h" />
     <ClInclude Include="debug.h" />
     <ClInclude Include="Game.h" />
     <ClInclude Include="GameObject.h" />
@@ -196,6 +198,7 @@
     <Text Include="cloud.txt" />
     <Text Include="coin.txt" />
     <Text Include="colorblock.txt" />
+    <Text Include="darkzone.txt" />
     <Text Include="goomba.txt" />
     <Text Include="ground.txt" />
     <Text Include="mario-sample.txt" />
