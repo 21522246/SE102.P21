@@ -102,6 +102,12 @@
     <ClCompile Include="DarkZone.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Fireball.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="PiranhaPlant.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Animation.h">
@@ -194,6 +200,12 @@
     <ClInclude Include="DarkZone.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Fireball.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="PiranhaPlant.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Text Include="brick.txt">
@@ -234,5 +246,7 @@
     <Text Include="pipe.txt" />
     <Text Include="mushroom.txt" />
     <Text Include="darkzone.txt" />
+    <Text Include="fireball.txt" />
+    <Text Include="piranhaplant.txt" />
   </ItemGroup>
 </Project>

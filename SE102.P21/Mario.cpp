@@ -8,6 +8,8 @@
 #include "Coin.h"
 #include "Portal.h"
 #include "Mushroom.h"
+#include "PiranhaPlant.h"
+#include "Fireball.h"
 
 #include "Collision.h"
 
@@ -15,6 +17,9 @@ void CMario::Update(DWORD dt, vector<LPGAMEOBJECT> *coObjects)
 {
 	vy += ay * dt;
 	vx += ax * dt;
+
+	CGame::GetInstance()->GetCurrentScene()->xMario = x;
+	CGame::GetInstance()->GetCurrentScene()->yMario = y;
 
 	if (abs(vx) > abs(maxVx)) vx = maxVx;
 
@@ -56,6 +61,10 @@ void CMario::OnCollisionWith(LPCOLLISIONEVENT e)
 		OnCollisionWithPortal(e);
 	else if (dynamic_cast<CMushroom*>(e->obj))
 		OnCollisionWithMushroom(e);
+	else if (dynamic_cast<CPPlant*>(e->obj))
+		OnCollisionWithPPlant(e);
+	else if (dynamic_cast<CFireball*>(e->obj))
+		OnCollisionWithFireball(e);
 }
 
 void CMario::OnCollisionWithGoomba(LPCOLLISIONEVENT e)
@@ -113,6 +122,34 @@ void CMario::OnCollisionWithMushroom(LPCOLLISIONEVENT e)
 		y -= 8;
 		level = MARIO_LEVEL_BIG;
 		StartUntouchable();
+	}
+}
+
+void CMario::OnCollisionWithPPlant(LPCOLLISIONEVENT e)
+{
+	if (level > MARIO_LEVEL_SMALL)
+	{
+		level = MARIO_LEVEL_SMALL;
+		StartUntouchable();
+	}
+	else
+	{
+		DebugOut(L">>> Mario DIE >>> \n");
+		SetState(MARIO_STATE_DIE);
+	}
+}
+
+void CMario::OnCollisionWithFireball(LPCOLLISIONEVENT e)
+{
+	if (level > MARIO_LEVEL_SMALL)
+	{
+		level = MARIO_LEVEL_SMALL;
+		StartUntouchable();
+	}
+	else
+	{
+		DebugOut(L">>> Mario DIE >>> \n");
+		SetState(MARIO_STATE_DIE);
 	}
 }
 

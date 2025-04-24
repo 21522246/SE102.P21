@@ -11,6 +11,8 @@ pipe.txt
 mysteryblock.txt
 mushroom.txt
 darkzone.txt
+fireball.txt
+piranhaplant.txt
 
 
 #
@@ -500,6 +502,12 @@ darkzone.txt
 
 #Darkzone2480
 12	2480	178	16	16	21	26	121000	122000	123000
+
+
+#PIRANHA PLANT
+13	360	146	2
+13	1864	146	1
+13	1800	162	3
 
 
 #Coin4testing
