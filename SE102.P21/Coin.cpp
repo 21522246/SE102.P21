@@ -15,7 +15,6 @@ void CCoin::Render()
 			setAppear = true;
 		}
 	}
-
 	//RenderBoundingBox();
 }
 
